@@ -137,12 +137,12 @@
       {#if version}
         <p class="version">
           {version}
-          {#if isStandalone}
+          <!-- {#if isStandalone}
             - <a href={WEBSITE}>{WEBSITE}</a>
-          {/if}
+          {/if} -->
         </p>
       {/if}
-      <p>{$_('p4.description1')}</p>
+      <!-- <p>{$_('p4.description1')}</p>
       <p>
         <ComplexMessage
           message={$_('p4.description2')}
@@ -172,7 +172,7 @@
       </p>
       <p class="disclaimer">
         {$_('p4.disclaimer')}
-      </p>
+      </p> -->
     </div>
   </Section>
 
@@ -217,7 +217,7 @@
   {/if}
 
   <footer>
-    <div>
+    <!-- <div>
       {#if PRIVACY_POLICY && !isStandalone}
         <a href={PRIVACY_POLICY}>{$_('p4.privacy')}</a>
         <span> - </span>
@@ -228,7 +228,6 @@
         <a href={SOURCE_CODE}>{$_('p4.sourceCode')}</a>
       {/if}
       {#if DONATE}
-        <!-- Donation link needs to be wrapped in another element so we can hide it in the Mac App Store -->
         <span class="donate-link">
           <span> - </span>
           <a href={DONATE}>{$_('p4.donate')}</a>
@@ -237,7 +236,7 @@
     </div>
     <div>
       <a href="https://docs.turbowarp.org/packager">{$_('p4.documentation')}</a>
-    </div>
+    </div> -->
     <div>
       <SelectTheme />
     </div>

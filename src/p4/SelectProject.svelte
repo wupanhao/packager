@@ -27,6 +27,8 @@
     $projectId = projectIdInURL;
   }
 
+  $type = 'file';
+
   let isImportingProject = false;
   importExternalProject({
     onStartImporting: () => {
@@ -231,7 +233,7 @@
     <p>{$_('select.selectHelp')}</p>
 
     <div class="options">
-      <div class="option">
+      <!-- <div class="option">
         <label>
           <input type="radio" name="project-type" bind:group={$type} value="id">
           {$_('select.id')}
@@ -239,7 +241,7 @@
         {#if $type === "id"}
           <input type="text" value={getDisplayedProjectURL()} spellcheck="false" on:keypress={submitOnEnter} on:input={handleInput} on:focus={handleFocus}>
         {/if}
-      </div>
+      </div> -->
       <!-- TurboWarp Desktop looks for the file-input-option class for special handling, so be careful when modifying this. -->
       <div class="option file-input-option">
         <label>
@@ -248,7 +250,7 @@
         </label>
         <input hidden={$type !== "file"} on:change={handleFileInputChange} bind:this={fileInputElement} type="file" accept=".sb,.sb2,.sb3">
       </div>
-      <div class="option">
+      <!-- <div class="option">
         <label>
           <input type="radio" name="project-type" bind:group={$type} value="url">
           {$_('select.url')}
@@ -256,7 +258,7 @@
         {#if $type === "url"}
           <input type="text" bind:value={$projectUrl} spellcheck="false" placeholder="https://..." on:keypress={submitOnEnter}>
         {/if}
-      </div>
+      </div> -->
     </div>
 
     {#if $type === "id"}

@@ -42,12 +42,12 @@ export default {
     estimatedSize: 135854818
   },
   'electron-win32': {
-    src: externalFile('electron-v22.3.27-win32-ia32.zip'),
-    sha256: '47bd498e5513529c5e141394fc9fd610cba1dcdea9e6dbb165edf929cbfd9af2',
+    src: 'electron-v22.3.27-win32-ia32.zip',
+    sha256: 'fb1dc1a23093a0dad439e77903666f38ab7091e9ed5fc55e316f955055f12d7f',
     estimatedSize: 90856612
   },
   'electron-win64': {
-    src: externalFile('electron-v22.3.27-win32-x64.zip'),
+    src: 'electron-v22.3.27-win32-x64.zip',
     sha256: '1a02c0f7af9664696f790dcce05948f0458a2f4f2d48c685f911d2eb99a4c9da',
     estimatedSize: 96605498
   },

@@ -539,7 +539,7 @@ cd "$(dirname "$0")"
     zip.file(`${resourcesPrefix}package.json`, JSON.stringify(manifest, null, 4));
 
     const mainJS = `'use strict';
-const {app, BrowserWindow, Menu, shell, screen, dialog} = require('electron');
+const {app, BrowserWindow, Menu, shell, screen, dialog, globalShortcut} = require('electron');
 const path = require('path');
 
 const isWindows = process.platform === 'win32';
@@ -607,6 +607,9 @@ const createProjectWindow = (url) => {
     window.maximize();
   }
   window.loadURL(url);
+  globalShortcut.register('CommandOrControl+Shift+i', function () {
+    window.webContents.openDevTools()
+  })
   window.show();
 };
 
@@ -691,6 +694,7 @@ app.on('web-contents-created', (event, contents) => {
       openLink(url);
     }
   });
+  /*
   contents.on('before-input-event', (e, input) => {
     const window = BrowserWindow.fromWebContents(contents);
     if (!window || input.type !== "keyDown") return;
@@ -705,6 +709,7 @@ app.on('web-contents-created', (event, contents) => {
       }
     }
   });
+  */
 });
 
 app.on('session-created', (session) => {

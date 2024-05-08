@@ -10,6 +10,9 @@ const EagerDynamicImportPlugin = require('./src/build/eager-dynamic-import-plugi
 const isProduction = process.env.NODE_ENV === 'production';
 const isStandalone = !!process.env.STANDALONE;
 const base = {
+  node: {
+    fs: 'empty'
+  },
   mode: isProduction ? 'production' : 'development'
 };
 const dist = path.resolve(__dirname, 'dist');
